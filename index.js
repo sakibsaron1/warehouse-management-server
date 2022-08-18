@@ -10,8 +10,7 @@ app.use(cors());
 app.use(express.json());
 
 /*
-db:saronsauto
-password:NcXWVwDijMCofX8F
+something is changing
 */
 
 const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.haic3.mongodb.net/?retryWrites=true&w=majority`;
