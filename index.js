@@ -1,6 +1,6 @@
 const express = require("express");
 const app = express();
-const port = process.env.PORT || 5000;
+const PORT = process.env.PORT || 5000;
 const cors = require("cors");
 const { MongoClient, ServerApiVersion } = require("mongodb");
 const ObjectId = require("mongodb").ObjectId;
@@ -8,14 +8,6 @@ require("dotenv").config();
 
 app.use(cors());
 app.use(express.json());
-
-app.get("/", (req, res) => {
-  res.send("Hello World!");
-});
-
-app.listen(port, () => {
-  console.log(`App listening on port ${port}`);
-});
 
 /*
 db:saronsauto
@@ -123,4 +115,12 @@ client.connect((err) => {
   console.log("db connected");
   // perform actions on the collection object
   client.close();
+});
+
+app.get("/", (req, res) => {
+  res.send("Hello World!");
+});
+
+app.listen(PORT, () => {
+  console.log(`App listening on port ${PORT}`);
 });
