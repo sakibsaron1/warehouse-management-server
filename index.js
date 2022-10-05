@@ -23,6 +23,7 @@ const client = new MongoClient(uri, {
 async function run() {
   try {
     await client.connect();
+    console.log("db connected");
     const collection = client.db("saronscar").collection("carsinfo");
     const user = { name: "Sakib Saron", email: "sakibsaron1@gmail.com" };
     // const result = await collection.insertOne(user);
@@ -110,11 +111,11 @@ async function deleteData() {
 
 deleteData().catch(console.dir);
 
-client.connect((err) => {
-  console.log("db connected");
-  // perform actions on the collection object
-  client.close();
-});
+// client.connect((err) => {
+//   console.log("db connected");
+//   // perform actions on the collection object
+//   // client.close();
+// });
 
 app.get("/", (req, res) => {
   res.send("Hello World!");
